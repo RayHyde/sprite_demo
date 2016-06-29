@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+
+<head>
+	<meta charset="utf-8">
+	<title>How does a sprite work?</title>
+	<meta name="description" content="description">
+	<meta name="keywords" content="keywords">
+	<meta name="author" content="Ray Hyde | www.rayhyde.nl">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://fonts.googleapis.com/css?family=Carter+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+	<div class="container">
+
+
+		<h1 class="tac">How does a sprite work?</h1>
+
+		<h2 class="tac">A demo to explain the concept to someone new to frontend</h2>
+
+		<p class="tac">The concept of a sprite.png is easily understood when it is seen in action.</p>
+		<p class="tac">Click on the yellow square to move the sprite and see what the css code is.</p>
+		<div class="wrap">
+			<div class="sprite"></div>
+			<div class="spriteHole"></div>
+			<ul class="cover">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<p class="css-code">CSS: background-position: <span>0 0</span></p>
+		</div>
+
+		<div id="explain">
+			<p>This project is part of my Playground - a collection of fun (and dare I say it: clever) stuff I made in the past, from jQuery games and plugins to CSS animation tricks.</p>
+			<p>Please drop in on my portfolio site <a href="http://www.rayhyde.nl">www.rayhyde.nl</a></p>
+		</div>
+
+	</div>
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script>
+		$(document).ready(function () {
+			var state = 1;
+			var sprite = $('.sprite');
+			var wrap = $('.wrap');
+			var p = wrap.find('p span');
+
+			wrap.on('click', function () {
+				state++;
+				if (state == 5) {
+					state = 1;
+				}
+				switch (state) {
+				case 1:
+					sprite.css({
+						'left': '174px',
+						'top': '174px'
+					});
+					p.text('0 0');
+					break;
+				case 2:
+					sprite.css({
+						'left': '124px',
+						'top': '174px'
+					});
+					p.text('-50px 0');
+					break;
+				case 3:
+					sprite.css({
+						'left': '124px',
+						'top': '124px'
+					});
+					p.text('-50px -50px');
+					break;
+				case 4:
+					sprite.css({
+						'left': '174px',
+						'top': '124px'
+					});
+					p.text('0 -50px');
+					break;
+				}
+			});
+
+		});
+	</script>
+</body>
+
+</html>
