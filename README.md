@@ -1,6 +1,6 @@
 <h1>How does a sprite.png work?</h1>
 
-<h2>A demo to explain the concept to someone new to frontend</h2>
+<h2>A demo to explain the concept to someone new to image sprites</h2>
 
 <p>The concept of a sprite.png is easily understood when it is seen in action. The demo shows how a sprite.png moves under an element and shows the resulting CSS.</p>
 
